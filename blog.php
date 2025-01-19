@@ -8,7 +8,7 @@
 echo "<h2>Articles publiés</h2>";
 foreach ($articles as $article) {
     echo "<article>";
-    echo "<h3>" . htmlspecialchars($article->titre) . "</h3>";
+    echo "<h3><a href=read.php?articleId=". $article->id. ">" . htmlspecialchars($article->titre) . "</a></h3>";
     echo "<p>" . nl2br(htmlspecialchars($article->contenu)) . "</p>";
     echo "</article>";
 }

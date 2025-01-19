@@ -1,6 +1,9 @@
 <?php include 'admin_data.php'; ?>
 <?php include 'header.php'; ?>
 <h1>Mini-Blog</h1>
+
+<a href="create.php">Créer un nouvel article</a>
+
 <?php
 echo "<h2>Articles publiés</h2>";
 foreach ($articles as $article) {

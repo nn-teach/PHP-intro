@@ -10,6 +10,7 @@ foreach ($articles as $article) {
     echo "<article>";
     echo "<h3><a href=read.php?articleId=". $article->id. ">" . htmlspecialchars($article->titre) . "</a></h3>";
     echo "<p>" . nl2br(htmlspecialchars($article->contenu)) . "</p>";
+    echo "<p><a href=update.php?articleId=". $article->id.">modifier</a></p>";
     echo "</article>";
 }
 ?>

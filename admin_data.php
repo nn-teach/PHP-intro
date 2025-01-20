@@ -21,6 +21,12 @@
         $query->execute([$_POST['titre'], $_POST['contenu'], $_POST['articleId']]); //execution de la requête en injectant les valeurs à la place des ? ci-dessus
     }
 
+    //Si le formulaire HTML de suppression d'article a été rempli
+    if (isset($_POST['supprimer_article'])) {
+        //préparation d'une requête SQL de suppression d'un article
+        $query = $pdo->prepare('DELETE FROM articles WHERE id = ?');
+        $query->execute([$_POST['articleId']]); //execution de la requête en injectant les valeurs à la place des ? ci-dessus
+    }
     //Récupération des données de la table articles
     $query = $pdo->prepare('SELECT * FROM articles');
     $query->execute();

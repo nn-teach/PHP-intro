@@ -10,7 +10,12 @@ foreach ($articles as $article) {
     echo "<article>";
     echo "<h3><a href=read.php?articleId=". $article->id. ">" . htmlspecialchars($article->titre) . "</a></h3>";
     echo "<p>" . nl2br(htmlspecialchars($article->contenu)) . "</p>";
-    echo "<p><a href=update.php?articleId=". $article->id.">modifier</a></p>";
+    echo "<div>";
+    echo "<a href=update.php?articleId=". $article->id.">modifier</a>";
+    echo    '<form method="post" action="blog.php">
+            <input type="hidden" name="articleId" value="'.$article->id.'">
+            <input type="submit" value="Supprimer" name="supprimer_article">';
+    echo "</div>";
     echo "</article>";
 }
 ?>
